@@ -1,4 +1,4 @@
-# Execução de testes com IA-MCP-ADO=CloudCowork
+# Execução de testes com IA-MCP-ADO-CloudCowork
 
 Skill `run-cenario-qa`, para o Claude, que executa Test Cases de um card do Azure DevOps no navegador: segue o Gherkin, tira prints com painel de rede e console, gera curls, registra o passo a passo no TC, grava o outcome no Test Plans e abre bugs quando algo falha.
 
