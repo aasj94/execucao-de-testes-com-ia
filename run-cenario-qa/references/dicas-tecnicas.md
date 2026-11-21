@@ -1,0 +1,11 @@
+# Anexo C: dicas técnicas
+- **Token de sessão do app:** leia-o do lugar onde o app o guarda (veja `config.md`) e use-o dentro do `fetch` na própria página, sem devolvê-lo na saída.
+- **Host da API por ambiente:** veja `config.md` e confirme na aba de rede.
+- Ao listar links ou HTML da página, filtre antes de devolver: alguns links de apps carregam o token na URL.
+- A ferramenta de JS pode bloquear saídas com `?`, `&` e `=` em sequência de URL: troque esses caracteres antes de devolver o resultado e desfaça a troca depois.
+- Se o print travar por timeout, a janela do Chrome provavelmente está escondida: peça ao QA para trazê-la para frente.
+- Se você usar mais de um navegador na mesma sessão (por exemplo, o Chrome e o navegador interno do app desktop), as ferramentas de cada um têm nomes diferentes. Se estiverem adiadas, carregue todas numa única busca de ferramentas. Nunca faça logout nem troque a conta logada sem o QA pedir.
+- Arrastar e soltar (ex.: construtores com vuedraggable) não funciona pela automação: peça ao QA para fazer esse passo.
+- Upload de arquivo pelo navegador (`file_upload`): só aceita arquivos em `/home/claude/...`. São recusados `/mnt/user-data/outputs/...` e o caminho da pasta do QA na máquina dele. Para subir um arquivo da pasta do QA, traga-o com `device_stage_files` e copie para `/home/claude/qa-up/`.
+- Páginas com formulários pesados podem levar mais de 10 s para montar: espere o conteúdo aparecer antes de concluir que a tela está vazia.
+- Os prints do `save_to_disk` ficam em `/tmp/claude-chrome-screenshots-*/` dentro da sessão: use esse caminho direto no `--print` do painel.
